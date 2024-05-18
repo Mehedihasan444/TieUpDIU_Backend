@@ -17,7 +17,7 @@ app.use(
 );
 app.use(express.json());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.hv3u7m5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.keaoogd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 // ssl commerz cresentials
 const store_id = process.env.storeID;
 const store_passwd = process.env.storePasswd;
@@ -35,9 +35,9 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    const cart = client.db("TutionEX").collection("cart");
-    const users = client.db("TutionEX").collection("users");
-    const courses = client.db("TutionEX").collection("courses");
+    const cart = client.db("TieUpDIU").collection("cart");
+    const users = client.db("TieUpDIU").collection("users");
+    const courses = client.db("TieUpDIU").collection("courses");
 
     // =================== courses crud operations ======================
 
