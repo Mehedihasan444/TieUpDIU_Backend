@@ -41,7 +41,7 @@ async function run() {
 
     // =================== courses crud operations ======================
 
-    // ===================  crud operations ======================
+    // ===================  crud operations =======================
  
     // get all courses added by individual user
     app.get("/courses/:email", async (req, res) => {
