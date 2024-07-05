@@ -135,6 +135,8 @@ async function run() {
     app.post("/users", async (req, res) => {
       const user = req.body;
 
+
+      // Check if email already exists in the database
       const isExist = await users.findOne({ email: user.email });
       if (isExist) {
         return res.send({ message: "already exists" });
