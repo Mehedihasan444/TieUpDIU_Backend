@@ -134,6 +134,11 @@ async function run() {
     // post user info
     app.post("/users", async (req, res) => {
       const user = req.body;
+
+      const isExist = await users.findOne({ email: user.email });
+      if (isExist) {
+        return res.send({ message: "already exists" });
+      }
       const result = await users.insertOne(user);
       res.send(result);
     });
@@ -157,6 +162,7 @@ async function run() {
       const tran_id = new ObjectId().toString();
       const id = new ObjectId().toString();
 
+    
       const cartItem = req.body;
       const email = cartItem.userEmail;
       const courses = cartItem.courses; // No need to spread here, assuming courses is an array
